@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhaka Hub — Mathematics &amp; Physics for O'Level</title>
+<meta name="description" content="Free O'Level Mathematics and Physics revision hub: simple interest, commission, decimals, fractions, percentages, rural solar power installation, and biogas energy — with interactive calculators and worked examples.">
+<meta name="keywords" content="O Level maths, O Level physics, simple interest, commission maths, decimals fractions percentages, solar power installation, biogas energy, Zimbabwe HBC, Heritage Based Curriculum">
+<meta name="author" content="Nhaka Hub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://yourusername.github.io/nhaka-hub/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nhaka Hub — Mathematics & Physics for O'Level">
+<meta property="og:description" content="Interactive O'Level revision: simple interest, commission, fractions & percentages, rural solar power, and biogas energy.">
+<meta property="og:url" content="https://yourusername.github.io/nhaka-hub/">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nhaka Hub — Mathematics & Physics for O'Level">
+<meta name="twitter:description" content="Interactive O'Level revision: simple interest, commission, fractions & percentages, rural solar power, and biogas energy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0E7D2;
+    --paper-deep:#E4D8BB;
+    --ink:#211A10;
+    --ink-soft:#5B5140;
+    --indigo:#1E3A52;
+    --indigo-deep:#132738;
+    --gold:#D9A441;
+    --gold-soft:#F0CE87;
+    --rust:#A6432D;
+    --green:#4C6444;
+    --line:rgba(33,26,16,0.16);
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Newsreader', serif;
+    font-weight:600;
+    margin:0 0 0.4em 0;
+    color:var(--ink);
+  }
+  p{margin:0 0 1em 0; max-width:66ch;}
+  a{color:var(--indigo);}
+  .container{max-width:1080px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- NAV ---------- */
+  .topnav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(240,231,210,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav-inner{
+    max-width:1080px; margin:0 auto; padding:14px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px; flex-wrap:wrap;
+  }
+  .brand{
+    font-family:'Newsreader', serif; font-weight:600; font-size:1.25rem;
+    display:flex; align-items:baseline; gap:8px;
+  }
+  .brand .mark{
+    color:var(--rust); font-style:italic; font-weight:500;
+  }
+  .navlinks{display:flex; gap:22px; flex-wrap:wrap; font-size:0.92rem;}
+  .navlinks a{text-decoration:none; color:var(--ink-soft); border-bottom:1px solid transparent; padding-bottom:2px;}
+  .navlinks a:hover{color:var(--rust); border-bottom-color:var(--rust);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:76px 0 56px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.3fr 1fr; gap:48px; align-items:end;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.2vw, 3.4rem);
+    line-height:1.06;
+    max-width:14ch;
+  }
+  .hero .lede{
+    font-size:1.08rem; color:var(--ink-soft); max-width:46ch;
+  }
+  .hero-figure{
+    justify-self:end;
+  }
+  .eyebrow{
+    font-size:0.82rem; color:var(--rust); margin-bottom:14px; display:block;
+    font-family:'Newsreader', serif; font-style:italic;
+  }
+  .topic-index{
+    margin-top:40px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  .topic-index a{
+    background:var(--paper); text-decoration:none; color:var(--ink);
+    padding:18px 16px; display:block; font-size:0.88rem;
+  }
+  .topic-index a .num{color:var(--ink-soft); font-size:0.78rem; display:block; margin-bottom:6px;}
+  .topic-index a strong{display:block; font-family:'Newsreader',serif; font-weight:600; font-size:1rem; margin-top:2px;}
+  .topic-index a:hover{background:var(--paper-deep);}
+
+  /* ---------- SECTIONS ---------- */
+  section.subject{
+    padding:64px 0 20px;
+  }
+  .subject-head{
+    display:flex; align-items:baseline; gap:18px; margin-bottom:8px;
+    border-bottom:2px solid var(--ink); padding-bottom:14px;
+  }
+  .subject-head h2{font-size:1.8rem; margin:0;}
+  .subject-head .tag{
+    font-size:0.8rem; color:var(--paper); background:var(--indigo);
+    padding:4px 10px; border-radius:2px; letter-spacing:0.02em;
+  }
+  .subject-head.physics .tag{background:var(--rust);}
+  .subject-intro{color:var(--ink-soft); margin-top:16px; max-width:70ch;}
+
+  .lesson{
+    padding:44px 0; border-bottom:1px solid var(--line);
+    display:grid; grid-template-columns:220px 1fr; gap:40px;
+  }
+  .lesson:last-child{border-bottom:none;}
+  .lesson-label{position:sticky; top:80px; align-self:start;}
+  .lesson-label .kicker{font-size:0.78rem; color:var(--ink-soft); display:block; margin-bottom:6px;}
+  .lesson-label h3{font-size:1.35rem; line-height:1.2;}
+  .lesson-body h4{
+    font-size:1.05rem; margin-top:28px; margin-bottom:10px;
+    font-family:'Work Sans',sans-serif; font-weight:600;
+  }
+  .lesson-body h4:first-child{margin-top:0;}
+
+  .callout{
+    background:var(--paper-deep);
+    border-left:3px solid var(--indigo);
+    padding:16px 20px; margin:18px 0; font-size:0.95rem;
+  }
+  .callout.gold{border-left-color:var(--gold); }
+  .callout.rust{border-left-color:var(--rust);}
+  .callout strong{display:block; margin-bottom:4px; font-family:'Newsreader',serif; font-size:1.02rem;}
+
+  .formula{
+    font-family:'Newsreader', serif; font-style:italic; font-size:1.25rem;
+    background:var(--indigo); color:var(--paper);
+    padding:16px 22px; margin:16px 0; display:inline-block;
+  }
+  .worked{
+    background:transparent; border:1px solid var(--line);
+    padding:18px 22px; margin:16px 0;
+  }
+  .worked .step{margin:0 0 8px 0; font-size:0.95rem;}
+  .worked .step:last-child{margin-bottom:0;}
+  .worked .step .op{color:var(--rust); font-weight:600;}
+
+  table.datatable{
+    border-collapse:collapse; width:100%; margin:16px 0; font-size:0.92rem;
+  }
+  table.datatable th, table.datatable td{
+    border:1px solid var(--line); padding:8px 10px; text-align:left;
+  }
+  table.datatable th{background:var(--paper-deep); font-family:'Newsreader',serif;}
+
+  /* ---------- TOOLS (calculators) ---------- */
+  .tool{
+    background:var(--ink); color:var(--paper);
+    padding:26px 26px 22px; margin:22px 0; border-radius:2px;
+  }
+  .tool h5{
+    margin:0 0 4px 0; font-family:'Newsreader',serif; font-size:1.1rem; color:var(--gold-soft);
+  }
+  .tool .tool-desc{color:#C9C0AC; font-size:0.86rem; margin-bottom:16px;}
+  .tool-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:14px;}
+  .field{display:flex; flex-direction:column; gap:5px; flex:1; min-width:130px;}
+  .field label{font-size:0.78rem; color:#C9C0AC;}
+  .field input, .field select{
+    background:#2C2417; border:1px solid #4A4030; color:var(--paper);
+    padding:9px 10px; font-family:'Work Sans',sans-serif; font-size:0.95rem; border-radius:2px;
+  }
+  .field input:focus, .field select:focus{outline:2px solid var(--gold); border-color:var(--gold);}
+  .tool button{
+    background:var(--gold); color:var(--ink); border:none;
+    padding:10px 20px; font-weight:600; font-size:0.9rem; cursor:pointer; border-radius:2px;
+    font-family:'Work Sans',sans-serif;
+  }
+  .tool button:hover{background:var(--gold-soft);}
+  .tool-out{
+    margin-top:16px; padding-top:14px; border-top:1px solid #4A4030;
+    font-size:0.95rem; min-height:1.2em;
+  }
+  .tool-out .big{font-family:'Newsreader',serif; font-size:1.6rem; color:var(--gold-soft); display:block; margin-bottom:4px;}
+  .tool-out .err{color:#E28B7A;}
+
+  /* quiz */
+  .quiz{border:1px solid var(--line); padding:20px 22px; margin:18px 0;}
+  .quiz h5{margin:0 0 12px; font-family:'Newsreader',serif; font-size:1.05rem;}
+  .quiz-item{margin-bottom:16px;}
+  .quiz-item p{margin-bottom:8px; font-weight:500; max-width:none;}
+  .quiz-choices{display:flex; gap:10px; flex-wrap:wrap;}
+  .quiz-choices button{
+    background:var(--paper-deep); border:1px solid var(--line); color:var(--ink);
+    padding:7px 14px; font-size:0.86rem; cursor:pointer; border-radius:2px; font-family:'Work Sans',sans-serif;
+  }
+  .quiz-choices button.correct{background:var(--green); color:#fff; border-color:var(--green);}
+  .quiz-choices button.wrong{background:var(--rust); color:#fff; border-color:var(--rust);}
+  .quiz-feedback{font-size:0.85rem; margin-top:8px; color:var(--ink-soft); min-height:1.1em;}
+
+  /* diagrams */
+  .diagram-wrap{margin:22px 0; border:1px solid var(--line); background:var(--paper-deep); padding:14px;}
+  .diagram-wrap svg{width:100%; height:auto; display:block;}
+  .diagram-caption{font-size:0.8rem; color:var(--ink-soft); margin-top:10px; text-align:center;}
+
+  .steps-list{padding-left:0; list-style:none; counter-reset:step;}
+  .steps-list li{
+    counter-increment:step; position:relative; padding-left:38px; margin-bottom:14px; font-size:0.95rem;
+  }
+  .steps-list li::before{
+    content:counter(step);
+    position:absolute; left:0; top:-1px;
+    width:26px; height:26px; border-radius:50%;
+    background:var(--indigo); color:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Newsreader',serif; font-size:0.85rem;
+  }
+  .lesson.physics .steps-list li::before{background:var(--rust);}
+
+  footer{
+    background:var(--indigo-deep); color:#C9D3D9;
+    padding:48px 0 32px; margin-top:60px;
+  }
+  footer .container{display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;}
+  footer h4{color:var(--paper); font-family:'Newsreader',serif;}
+  footer p{color:#9FB0B8; max-width:50ch; font-size:0.9rem;}
+  footer .fine{font-size:0.78rem; color:#6E828C; margin-top:24px;}
+
+  @media (max-width:820px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-figure{justify-self:start; margin-top:24px;}
+    .topic-index{grid-template-columns:1fr 1fr;}
+    .lesson{grid-template-columns:1fr; gap:14px;}
+    .lesson-label{position:static;}
+    .tool-row{flex-direction:column;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">Nhaka Hub <span class="mark">— maths &amp; physics</span></div>
+    <div class="navlinks">
+      <a href="#finance">Simple interest &amp; commission</a>
+      <a href="#numbers">Decimals, fractions, %</a>
+      <a href="#solar">Rural solar power</a>
+      <a href="#biogas">Biogas energy</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">A study hub built around the things you already see at home</span>
+        <h1>Mathematics and Physics, worked out on Zimbabwean ground.</h1>
+        <p class="lede">Two subjects, four topics you'll actually be examined on and see in daily life: money and percentages in the market, and energy solutions for homes that aren't yet on the national grid. Every idea here ends in a calculation you can do yourself.</p>
+      </div>
+      <div class="hero-figure" id="hero-svg"></div>
+    </div>
+
+    <div class="topic-index">
+      <a href="#finance"><span class="num">Maths · 01</span><strong>Simple Interest &amp; Commission</strong></a>
+      <a href="#numbers"><span class="num">Maths · 02</span><strong>Decimals, Fractions &amp; Percentages</strong></a>
+      <a href="#solar"><span class="num">Physics · 01</span><strong>Rural Solar Power Installation</strong></a>
+      <a href="#biogas"><span class="num">Physics · 02</span><strong>Biogas From Cattle Dung</strong></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ MATHEMATICS ============================================================ -->
+<section class="subject" id="maths">
+  <div class="container">
+    <div class="subject-head">
+      <h2>Mathematics</h2>
+      <span class="tag">O'Level Paper — Number &amp; Finance</span>
+    </div>
+    <p class="subject-intro">Almost every adult calculation you'll do outside school — working out a loan, splitting a bonus, reading a discount sticker — comes down to two skills: handling percentages confidently, and applying the right formula to money over time. These two lessons build both from first principles.</p>
+  </div>
+
+  <!-- ---- FINANCIAL MATHS ---- -->
+  <div class="container">
+    <div class="lesson" id="finance">
+      <div class="lesson-label">
+        <span class="kicker">Maths · Topic 01</span>
+        <h3>Financial Mathematics: Simple Interest &amp; Commission</h3>
+      </div>
+      <div class="lesson-body">
+        <h4>Why this matters</h4>
+        <p>Whenever someone saves money at a bank, borrows from a lender, or sells goods for a company on a percentage basis, they are using simple interest or commission. Both are just percentages applied to money — the trick is knowing which formula and which numbers to plug in.</p>
+
+        <h4>Simple interest, from first principles</h4>
+        <p>Simple interest is a fixed reward (or charge) calculated only on the original amount, called the <strong>Principal (P)</strong>, every year, at a fixed <strong>Rate (R)</strong>, for a number of <strong>Time</strong> periods (T), usually years. Unlike compound interest, it never grows the "base" — year two earns exactly the same interest as year one.</p>
+        <div class="formula">I = (P &times; R &times; T) &divide; 100</div>
+        <p>Once you know the interest (I), the total amount (A) owed or received is simply the principal plus the interest:</p>
+        <div class="formula">A = P + I</div>
+
+        <div class="worked">
+          <p class="step"><span class="op">Example.</span> Tendai deposits $400 into a savings account paying 6% simple interest per year. How much interest has he earned after 3 years, and what is the account worth?</p>
+          <p class="step">P = 400, R = 6, T = 3</p>
+          <p class="step">I = (400 &times; 6 &times; 3) &divide; 100 = 7200 &divide; 100 = <strong>$72</strong></p>
+          <p class="step">A = 400 + 72 = <strong>$472</strong></p>
+        </div>
+
+        <div class="callout">
+          <strong>Common exam trap</strong>
+          If time is given in months, convert it to years first by dividing by 12 (e.g. 8 months = 8/12 years) before substituting into the formula.
+        </div>
+
+        <h4>Commission</h4>
+        <p>Commission is money paid to a salesperson or agent as a percentage of the value of what they sold. It rewards performance rather than time, so there is no "T" in the formula at all:</p>
+        <div class="formula">Commission = (Rate &divide; 100) &times; Sales Value</div>
+
+        <div class="worked">
+          <p class="step"><span class="op">Example.</span> A real-estate agent earns 2.5% commission on every house she sells. She sells a house for $85,000. What is her commission?</p>
+          <p class="step">Commission = (2.5 &divide; 100) &times; 85,000</p>
+          <p class="step">Commission = 0.025 &times; 85,000 = <strong>$2,125</strong></p>
+        </div>
+
+        <div class="callout gold">
+          <strong>Basic salary plus commission</strong>
+          Many jobs pay a fixed basic salary <em>plus</em> commission on sales above a threshold. Always calculate the two parts separately, then add them: Total pay = Basic salary + Commission earned.
+        </div>
+
+        <div class="tool" id="tool-interest">
+          <h5>Try it — Simple Interest Calculator</h5>
+          <p class="tool-desc">Enter any principal, rate, and time to see the interest and final amount, worked out step by step.</p>
+          <div class="tool-row">
+            <div class="field"><label for="si-p">Principal (P), in $</label><input id="si-p" type="number" step="any" placeholder="e.g. 400"></div>
+            <div class="field"><label for="si-r">Rate (R), % per year</label><input id="si-r" type="number" step="any" placeholder="e.g. 6"></div>
+            <div class="field"><label for="si-t">Time (T), years</label><input id="si-t" type="number" step="any" placeholder="e.g. 3"></div>
+          </div>
+          <button onclick="calcInterest()">Calculate interest</button>
+          <div class="tool-out" id="si-out"></div>
+        </div>
+
+        <div class="tool" id="tool-commission">
+          <h5>Try it — Commission Calculator</h5>
+          <p class="tool-desc">Work out commission earned on a sale, with an optional basic salary added on top.</p>
+          <div class="tool-row">
+            <div class="field"><label for="cm-sales">Sales value, $</label><input id="cm-sales" type="number" step="any" placeholder="e.g. 85000"></div>
+            <div class="field"><label for="cm-rate">Commission rate, %</label><input id="cm-rate" type="number" step="any" placeholder="e.g. 2.5"></div>
+            <div class="field"><label for="cm-basic">Basic salary, $ (optional)</label><input id="cm-basic" type="number" step="any" placeholder="e.g. 0"></div>
+          </div>
+          <button onclick="calcCommission()">Calculate pay</button>
+          <div class="tool-out" id="cm-out"></div>
+        </div>
+
+        <div class="quiz" id="quiz-finance">
+          <h5>Quick check</h5>
+          <div class="quiz-item">
+            <p>1. Rudo borrows $600 at 8% simple interest per year for 2 years. How much interest does she owe?</p>
+            <div class="quiz-choices">
+              <button onclick="checkQuiz(this,false)">$48</button>
+              <button onclick="checkQuiz(this,true)">$96</button>
+              <button onclick="checkQuiz(this,false)">$144</button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-item">
+            <p>2. A salesman earns 4% commission on a $12,000 sale. What is his commission?</p>
+            <div class="quiz-choices">
+              <button onclick="checkQuiz(this,false)">$120</button>
+              <button onclick="checkQuiz(this,true)">$480</button>
+              <button onclick="checkQuiz(this,false)">$48</button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- DECIMALS FRACTIONS PERCENTAGES ---- -->
+    <div class="lesson" id="numbers">
+      <div class="lesson-label">
+        <span class="kicker">Maths · Topic 02</span>
+        <h3>Decimals, Fractions &amp; Percentages</h3>
+      </div>
+      <div class="lesson-body">
+        <h4>Three faces of the same number</h4>
+        <p>A decimal, a fraction, and a percentage are three different ways of writing the exact same value. Being able to move freely between them is what makes calculations like "30% off" or "share this in a ratio of 3:5" quick instead of confusing.</p>
+
+        <table class="datatable">
+          <tr><th>Fraction</th><th>Decimal</th><th>Percentage</th><th>How to convert</th></tr>
+          <tr><td>1/2</td><td>0.5</td><td>50%</td><td>Divide top by bottom, then &times;100 for %</td></tr>
+          <tr><td>1/4</td><td>0.25</td><td>25%</td><td>1 &divide; 4 = 0.25; 0.25 &times; 100 = 25%</td></tr>
+          <tr><td>3/5</td><td>0.6</td><td>60%</td><td>3 &divide; 5 = 0.6; 0.6 &times; 100 = 60%</td></tr>
+          <tr><td>7/8</td><td>0.875</td><td>87.5%</td><td>7 &divide; 8 = 0.875; &times;100 = 87.5%</td></tr>
+        </table>
+
+        <div class="formula">Percentage = (Fraction) &times; 100 &nbsp;|&nbsp; Fraction = Percentage &divide; 100 &nbsp;|&nbsp; Decimal = Fraction (as division)</div>
+
+        <h4>Real-life calculation 1 — market discount</h4>
+        <div class="worked">
+          <p class="step"><span class="op">Example.</span> A pair of shoes costs $18. The shop offers 15% off. What is the new price?</p>
+          <p class="step">Discount = 15% of 18 = (15 &divide; 100) &times; 18 = 0.15 &times; 18 = $2.70</p>
+          <p class="step">New price = 18 &minus; 2.70 = <strong>$15.30</strong></p>
+        </div>
+
+        <h4>Real-life calculation 2 — sharing a harvest by fraction</h4>
+        <div class="worked">
+          <p class="step"><span class="op">Example.</span> A family harvests 240 kg of maize. They keep 3/8 of it for the household and sell the rest. How many kg do they sell?</p>
+          <p class="step">Kept = 3/8 &times; 240 = (3 &times; 240) &divide; 8 = 720 &divide; 8 = 90 kg</p>
+          <p class="step">Sold = 240 &minus; 90 = <strong>150 kg</strong></p>
+        </div>
+
+        <h4>Real-life calculation 3 — recipe scaling with decimals</h4>
+        <div class="worked">
+          <p class="step"><span class="op">Example.</span> A recipe for 4 people needs 0.75 kg of flour. How much flour is needed for 10 people?</p>
+          <p class="step">Flour per person = 0.75 &divide; 4 = 0.1875 kg</p>
+          <p class="step">For 10 people = 0.1875 &times; 10 = <strong>1.875 kg</strong></p>
+        </div>
+
+        <div class="callout rust">
+          <strong>Reading the exam question</strong>
+          "Of" almost always means multiply ("15% <em>of</em> 18"), "per" means divide ("kg <em>per</em> person"), and "out of" describes a fraction ("90 out of 240").
+        </div>
+
+        <div class="tool" id="tool-convert">
+          <h5>Try it — Decimal / Fraction / Percentage Converter</h5>
+          <p class="tool-desc">Type a value into any one field and the other two update automatically. For fractions, use the form a/b (e.g. 3/8).</p>
+          <div class="tool-row">
+            <div class="field"><label for="cv-dec">Decimal</label><input id="cv-dec" type="text" placeholder="e.g. 0.6" oninput="convertFrom('dec')"></div>
+            <div class="field"><label for="cv-frac">Fraction (a/b)</label><input id="cv-frac" type="text" placeholder="e.g. 3/5" oninput="convertFrom('frac')"></div>
+            <div class="field"><label for="cv-pct">Percentage (%)</label><input id="cv-pct" type="text" placeholder="e.g. 60" oninput="convertFrom('pct')"></div>
+          </div>
+          <div class="tool-out" id="cv-out">Start typing in any field above.</div>
+        </div>
+
+        <div class="tool" id="tool-discount">
+          <h5>Try it — Discount &amp; Final Price</h5>
+          <p class="tool-desc">Find the discount amount and final price for any percentage off.</p>
+          <div class="tool-row">
+            <div class="field"><label for="dc-price">Original price, $</label><input id="dc-price" type="number" step="any" placeholder="e.g. 18"></div>
+            <div class="field"><label for="dc-pct">Discount, %</label><input id="dc-pct" type="number" step="any" placeholder="e.g. 15"></div>
+          </div>
+          <button onclick="calcDiscount()">Calculate final price</button>
+          <div class="tool-out" id="dc-out"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PHYSICS ============================================================ -->
+<section class="subject" id="physics">
+  <div class="container">
+    <div class="subject-head physics">
+      <h2>Physics</h2>
+      <span class="tag">O'Level Paper — Energy &amp; Practical Projects</span>
+    </div>
+    <p class="subject-intro">Physics is most useful when it solves a real problem in front of you. Both topics below are common Heritage-Based Curriculum project areas: taking an everyday rural challenge — no grid electricity, no clean cooking fuel — and building a working solution out of it, using the same energy concepts you'll be examined on.</p>
+  </div>
+
+  <div class="container">
+    <!-- ---- SOLAR ---- -->
+    <div class="lesson physics" id="solar">
+      <div class="lesson-label">
+        <span class="kicker">Physics · Topic 01</span>
+        <h3>Electricity Installation in Rural Areas: Assembling a Solar-Powered Grid</h3>
+      </div>
+      <div class="lesson-body">
+        <h4>The problem</h4>
+        <p>Many rural homesteads and schools are far from the national electricity grid, but the sun reaches every roof for free. A small standalone ("off-grid") solar system converts sunlight directly into usable electricity for lighting, phone charging, and radios, without needing a connection to Zesa lines.</p>
+
+        <h4>The four components you are assembling</h4>
+        <ul>
+          <li><strong>Solar panel</strong> — converts sunlight into DC electricity via the photovoltaic effect.</li>
+          <li><strong>Charge controller</strong> — regulates the current flowing from the panel into the battery so it doesn't overcharge or get damaged.</li>
+          <li><strong>Battery</strong> — stores electrical energy as chemical energy, so there is still power after sunset.</li>
+          <li><strong>Inverter (optional) / DC loads</strong> — either converts stored DC into AC for normal appliances, or powers DC loads (LED bulbs, small radios) directly.</li>
+        </ul>
+
+        <div class="diagram-wrap" id="solar-diagram"></div>
+
+        <h4>Assembling the system</h4>
+        <ol class="steps-list">
+          <li>Mount the solar panel facing north (in the Southern Hemisphere) at a tilt angle close to your local latitude, with no shade falling on it during the day.</li>
+          <li>Run cables from the panel's positive and negative terminals to the "solar in" terminals of the charge controller — never straight to the battery.</li>
+          <li>Connect the battery to the charge controller's "battery" terminals, matching positive to positive and negative to negative.</li>
+          <li>Connect your load (LED lights, a DC radio, or an inverter for AC appliances) to the controller's "load" output.</li>
+          <li>Switch on and confirm the controller's indicator shows charging during the day and safe discharge at night.</li>
+        </ol>
+
+        <h4>The physics behind sizing the system</h4>
+        <p>The two formulas below let you check whether a panel and battery are actually big enough for what you want to run — this is the calculation examiners expect you to do, and the one that stops a real installation from failing on the first cloudy day.</p>
+        <div class="formula">Power (P, in watts) = Voltage (V) &times; Current (I)</div>
+        <div class="formula">Energy stored (Wh) = Battery Voltage (V) &times; Battery Capacity (Ah)</div>
+
+        <div class="worked">
+          <p class="step"><span class="op">Example.</span> A homestead runs three 10 W LED bulbs for 5 hours each night. How much energy (in watt-hours) is needed per night, and what size 12 V battery (in Ah) should store it?</p>
+          <p class="step">Total power = 3 &times; 10 W = 30 W</p>
+          <p class="step">Energy needed = Power &times; Time = 30 W &times; 5 h = <strong>150 Wh</strong></p>
+          <p class="step">Required battery capacity = Energy &divide; Voltage = 150 &divide; 12 = <strong>12.5 Ah</strong> (choose the next standard size up, e.g. 20 Ah, to allow for cloudy days and battery losses)</p>
+        </div>
+
+        <div class="callout">
+          <strong>Why installers oversize the battery</strong>
+          Batteries should not be drained below about 50% of their rated capacity, or they wear out fast. That is why real installations double the calculated Ah value as a safety margin.
+        </div>
+
+        <div class="tool" id="tool-solar">
+          <h5>Try it — Off-Grid System Sizer</h5>
+          <p class="tool-desc">Estimate the daily energy your loads need and the minimum battery capacity to store it.</p>
+          <div class="tool-row">
+            <div class="field"><label for="sl-watt">Total load power, W</label><input id="sl-watt" type="number" step="any" placeholder="e.g. 30"></div>
+            <div class="field"><label for="sl-hours">Hours used per day</label><input id="sl-hours" type="number" step="any" placeholder="e.g. 5"></div>
+            <div class="field"><label for="sl-volt">Battery voltage, V</label><input id="sl-volt" type="number" step="any" placeholder="e.g. 12"></div>
+          </div>
+          <button onclick="calcSolar()">Calculate system size</button>
+          <div class="tool-out" id="sl-out"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- BIOGAS ---- -->
+    <div class="lesson physics" id="biogas">
+      <div class="lesson-label">
+        <span class="kicker">Physics · Topic 02 — HBC project</span>
+        <h3>Turning Cattle Dung Into Cooking Energy: A Simple Biogas Digester</h3>
+      </div>
+      <div class="lesson-body">
+        <h4>The problem</h4>
+        <p>Most rural households cook with firewood, which takes hours of walking to collect and adds smoke to the home. Almost every rural homestead in Zimbabwe already keeps cattle — and cattle dung, when it rots without air, releases a flammable gas (mostly methane) that can be piped straight to a stove. This is a genuine energy-transformation project: chemical energy in waste becomes heat energy for cooking, using nothing but airtight containers and physics.</p>
+
+        <h4>The physics idea: anaerobic digestion</h4>
+        <p>When dung and water are sealed away from oxygen (an <strong>anaerobic</strong>, or airless, environment), bacteria break down the organic matter and release <strong>biogas</strong> as a by-product. Because the container is sealed, the gas produced has nowhere to go except to build up pressure — and that pressure is exactly what pushes the gas along a pipe to the stove, the same way pressure differences drive gas through any pipe.</p>
+
+        <div class="diagram-wrap" id="biogas-diagram"></div>
+
+        <h4>Building a basic household digester</h4>
+        <ol class="steps-list">
+          <li>Mix fresh cattle dung with water in roughly a 1:1 ratio in a drum until it reaches the thickness of a thin porridge, called the "slurry."</li>
+          <li>Pour the slurry into a sealed digester tank (an old drum or brick chamber works) fitted with an inlet pipe and a gas outlet at the top.</li>
+          <li>Seal every joint airtight — any leak lets oxygen in, which stops the anaerobic bacteria from working properly.</li>
+          <li>Fit a flexible storage bag or an inverted floating drum over the gas outlet; as gas is produced, it collects here and its own weight keeps the system under gentle, steady pressure.</li>
+          <li>Run a pipe from the gas store to a modified stove burner; open the valve and light the burner as you would with any gas cooker.</li>
+          <li>Remove the spent slurry from an overflow outlet every few weeks and use it as a nutrient-rich fertiliser for crops — nothing is wasted.</li>
+        </ol>
+
+        <h4>The physics behind estimating gas output</h4>
+        <p>A commonly used field estimate is that one kilogram of fresh cattle dung yields approximately 0.03 to 0.04 cubic metres of biogas. This lets you estimate, from the size of a herd, roughly how much gas a household can expect per day — the same kind of proportional calculation used for the solar sizing above.</p>
+        <div class="formula">Gas yield (m&sup3;) = Mass of dung (kg) &times; Yield rate (m&sup3; per kg)</div>
+
+        <div class="worked">
+          <p class="step"><span class="op">Example.</span> A homestead collects 25 kg of fresh dung per day, and the digester yields 0.035 m&sup3; of biogas per kg of dung. How much biogas is produced daily, and roughly how many hours of cooking (at 0.2 m&sup3; per hour of use) does that provide?</p>
+          <p class="step">Gas yield = 25 &times; 0.035 = <strong>0.875 m&sup3; per day</strong></p>
+          <p class="step">Cooking time = 0.875 &divide; 0.2 = <strong>about 4.4 hours of stove use per day</strong></p>
+        </div>
+
+        <div class="callout gold">
+          <strong>Heritage link</strong>
+          This project uses only resources already present at a typical rural homestead — cattle, water, and simple containers — turning an existing waste product into both cooking fuel and crop fertiliser, which is exactly the kind of local, self-reliant solution the Heritage-Based Curriculum's school-based projects are designed to reward.
+        </div>
+
+        <div class="tool" id="tool-biogas">
+          <h5>Try it — Biogas Yield Estimator</h5>
+          <p class="tool-desc">Estimate daily gas output and cooking hours from the amount of dung collected.</p>
+          <div class="tool-row">
+            <div class="field"><label for="bg-mass">Dung collected per day, kg</label><input id="bg-mass" type="number" step="any" placeholder="e.g. 25"></div>
+            <div class="field"><label for="bg-rate">Yield rate, m&sup3; per kg</label><input id="bg-rate" type="number" step="any" value="0.035"></div>
+            <div class="field"><label for="bg-use">Stove use rate, m&sup3; per hour</label><input id="bg-use" type="number" step="any" value="0.2"></div>
+          </div>
+          <button onclick="calcBiogas()">Estimate gas output</button>
+          <div class="tool-out" id="bg-out"></div>
+        </div>
+
+        <div class="quiz" id="quiz-physics">
+          <h5>Quick check</h5>
+          <div class="quiz-item">
+            <p>1. In a solar system, why must the panel connect to the charge controller rather than directly to the battery?</p>
+            <div class="quiz-choices">
+              <button onclick="checkQuiz(this,false)">Panels can't produce DC current</button>
+              <button onclick="checkQuiz(this,true)">To regulate current and prevent overcharging</button>
+              <button onclick="checkQuiz(this,false)">Batteries only accept AC power</button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-item">
+            <p>2. Why must a biogas digester be sealed away from oxygen?</p>
+            <div class="quiz-choices">
+              <button onclick="checkQuiz(this,false)">To keep the dung warm</button>
+              <button onclick="checkQuiz(this,false)">To increase water pressure</button>
+              <button onclick="checkQuiz(this,true)">Anaerobic bacteria need an airless environment to produce gas</button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>Nhaka Hub</h4>
+      <p>Nhaka means heritage — the idea that the best lessons build on what a learner already knows and already has around them at home.</p>
+    </div>
+    <div>
+      <h4>How to use this page</h4>
+      <p>Work through each lesson in order, attempt the worked examples on paper first, then check yourself with the calculators and quick-check questions.</p>
+    </div>
+  </div>
+  <div class="container fine">Built for O'Level Mathematics and Physics revision, aligned with Heritage-Based Curriculum project themes.</div>
+</footer>
+
+<script>
+/* ---------------- Simple Interest ---------------- */
+function calcInterest(){
+  const p = parseFloat(document.getElementById('si-p').value);
+  const r = parseFloat(document.getElementById('si-r').value);
+  const t = parseFloat(document.getElementById('si-t').value);
+  const out = document.getElementById('si-out');
+  if(isNaN(p) || isNaN(r) || isNaN(t) || p<0 || r<0 || t<0){
+    out.innerHTML = '<span class="err">Please enter valid non-negative numbers for P, R and T.</span>';
+    return;
+  }
+  const interest = (p*r*t)/100;
+  const amount = p + interest;
+  out.innerHTML = '<span class="big">I = $' + interest.toFixed(2) + '</span>' +
+    'Total amount after ' + t + ' year(s): <strong>$' + amount.toFixed(2) + '</strong>' +
+    '<br>Working: I = (' + p + ' &times; ' + r + ' &times; ' + t + ') &divide; 100 = $' + interest.toFixed(2);
+}
+
+/* ---------------- Commission ---------------- */
+function calcCommission(){
+  const sales = parseFloat(document.getElementById('cm-sales').value);
+  const rate = parseFloat(document.getElementById('cm-rate').value);
+  let basic = parseFloat(document.getElementById('cm-basic').value);
+  if(isNaN(basic)) basic = 0;
+  const out = document.getElementById('cm-out');
+  if(isNaN(sales) || isNaN(rate) || sales<0 || rate<0){
+    out.innerHTML = '<span class="err">Please enter valid non-negative numbers for sales value and rate.</span>';
+    return;
+  }
+  const commission = (rate/100)*sales;
+  const total = commission + basic;
+  out.innerHTML = '<span class="big">Commission = $' + commission.toFixed(2) + '</span>' +
+    (basic>0 ? 'Plus basic salary of $' + basic.toFixed(2) + ' &rarr; Total pay: <strong>$' + total.toFixed(2) + '</strong>' : 'Total pay: <strong>$' + total.toFixed(2) + '</strong>');
+}
+
+/* ---------------- Discount ---------------- */
+function calcDiscount(){
+  const price = parseFloat(document.getElementById('dc-price').value);
+  const pct = parseFloat(document.getElementById('dc-pct').value);
+  const out = document.getElementById('dc-out');
+  if(isNaN(price) || isNaN(pct) || price<0 || pct<0){
+    out.innerHTML = '<span class="err">Please enter valid non-negative numbers.</span>';
+    return;
+  }
+  const discountAmt = (pct/100)*price;
+  const finalPrice = price - discountAmt;
+  out.innerHTML = '<span class="big">Final price = $' + finalPrice.toFixed(2) + '</span>' +
+    'Discount amount: $' + discountAmt.toFixed(2) + ' (that is ' + pct + '% of $' + price.toFixed(2) + ')';
+}
+
+/* ---------------- Fraction/Decimal/Percentage converter ---------------- */
+function gcd(a,b){ a=Math.abs(a); b=Math.abs(b); while(b){ [a,b]=[b, a % b]; } return a || 1; }
+
+function decimalToFraction(dec){
+  if (!isFinite(dec)) return null;
+  const tolerance = 1.0E-9;
+  let h1=1, h2=0, k1=0, k2=1, b = dec;
+  do {
+    const a = Math.floor(b);
+    let aux = h1; h1 = a*h1+h2; h2 = aux;
+    aux = k1; k1 = a*k1+k2; k2 = aux;
+    b = 1/(b-a);
+  } while (Math.abs(dec - h1/k1) > dec*tolerance && k1 < 100000);
+  return [h1, k1];
+}
+
+function convertFrom(source){
+  const decEl = document.getElementById('cv-dec');
+  const fracEl = document.getElementById('cv-frac');
+  const pctEl = document.getElementById('cv-pct');
+  const out = document.getElementById('cv-out');
+  let decimal = null;
+
+  try{
+    if(source==='dec'){
+      const v = parseFloat(decEl.value);
+      if(isNaN(v)) throw new Error();
+      decimal = v;
+    } else if(source==='pct'){
+      const v = parseFloat(pctEl.value);
+      if(isNaN(v)) throw new Error();
+      decimal = v/100;
+    } else if(source==='frac'){
+      const parts = fracEl.value.split('/');
+      if(parts.length!==2) throw new Error();
+      const num = parseFloat(parts[0]);
+      const den = parseFloat(parts[1]);
+      if(isNaN(num) || isNaN(den) || den===0) throw new Error();
+      decimal = num/den;
+    }
+  }catch(e){
+    out.innerHTML = 'Keep typing — once the value is complete, all three fields will update.';
+    return;
+  }
+
+  const [fn, fd] = decimalToFraction(decimal);
+  const g = gcd(fn, fd);
+  const simpN = fn/g, simpD = fd/g;
+
+  if(source!=='dec') decEl.value = (Math.round(decimal*10000)/10000).toString();
+  if(source!=='pct') pctEl.value = (Math.round(decimal*10000)/100).toString();
+  if(source!=='frac') fracEl.value = simpN + '/' + simpD;
+
+  out.innerHTML = '<span class="big">' + simpN + '/' + simpD + '  =  ' + (Math.round(decimal*10000)/10000) + '  =  ' + (Math.round(decimal*10000)/100) + '%</span>All three forms represent the same value.';
+}
+
+/* ---------------- Solar sizing ---------------- */
+function calcSolar(){
+  const watt = parseFloat(document.getElementById('sl-watt').value);
+  const hours = parseFloat(document.getElementById('sl-hours').value);
+  const volt = parseFloat(document.getElementById('sl-volt').value);
+  const out = document.getElementById('sl-out');
+  if(isNaN(watt) || isNaN(hours) || isNaN(volt) || watt<0 || hours<0 || volt<=0){
+    out.innerHTML = '<span class="err">Please enter valid numbers (voltage must be greater than zero).</span>';
+    return;
+  }
+  const energy = watt*hours;
+  const ah = energy/volt;
+  const ahSafe = ah*2;
+  out.innerHTML = '<span class="big">' + energy.toFixed(1) + ' Wh per day</span>' +
+    'Minimum battery capacity needed: <strong>' + ah.toFixed(1) + ' Ah</strong> at ' + volt + ' V' +
+    '<br>Recommended capacity with a 50% depth-of-discharge safety margin: <strong>' + ahSafe.toFixed(1) + ' Ah</strong>';
+}
+
+/* ---------------- Biogas yield ---------------- */
+function calcBiogas(){
+  const mass = parseFloat(document.getElementById('bg-mass').value);
+  const rate = parseFloat(document.getElementById('bg-rate').value);
+  const use = parseFloat(document.getElementById('bg-use').value);
+  const out = document.getElementById('bg-out');
+  if(isNaN(mass) || isNaN(rate) || isNaN(use) || mass<0 || rate<0 || use<=0){
+    out.innerHTML = '<span class="err">Please enter valid numbers (stove use rate must be greater than zero).</span>';
+    return;
+  }
+  const gas = mass*rate;
+  const cookHours = gas/use;
+  out.innerHTML = '<span class="big">' + gas.toFixed(3) + ' m&sup3; of biogas per day</span>' +
+    'Estimated cooking time available: <strong>' + cookHours.toFixed(1) + ' hours per day</strong>' +
+    '<br>Working: ' + mass + ' kg &times; ' + rate + ' m&sup3;/kg = ' + gas.toFixed(3) + ' m&sup3;; then &divide; ' + use + ' m&sup3;/h';
+}
+
+/* ---------------- Quiz ---------------- */
+function checkQuiz(btn, isCorrect){
+  const choices = btn.parentElement;
+  const feedback = choices.nextElementSibling;
+  Array.from(choices.children).forEach(b => { b.classList.remove('correct','wrong'); b.disabled = true; });
+  if(isCorrect){
+    btn.classList.add('correct');
+    feedback.textContent = 'Correct.';
+  } else {
+    btn.classList.add('wrong');
+    Array.from(choices.children).forEach(b => {
+      // reveal correct by re-enabling logic is not tracked; just mark this wrong
+    });
+    feedback.textContent = 'Not quite — look at the worked example above and try the calculator to see the right method.';
+  }
+}
+
+/* ---------------- SVG diagrams ---------------- */
+document.getElementById('hero-svg').innerHTML = `
+<svg viewBox="0 0 260 220" width="260" height="220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="260" height="220" fill="none"/>
+  <circle cx="200" cy="40" r="26" fill="#D9A441"/>
+  <g stroke="#D9A441" stroke-width="3">
+    <line x1="200" y1="4" x2="200" y2="-4"/>
+    <line x1="238" y1="40" x2="248" y2="40"/>
+    <line x1="227" y1="13" x2="234" y2="6"/>
+    <line x1="227" y1="67" x2="234" y2="74"/>
+  </g>
+  <rect x="60" y="70" width="90" height="55" fill="#1E3A52" stroke="#211A10" stroke-width="2" transform="skewY(-8)"/>
+  <g stroke="#F0E7D2" stroke-width="1.5" opacity="0.6">
+    <line x1="75" y1="66" x2="75" y2="118"/>
+    <line x1="105" y1="61" x2="105" y2="112"/>
+    <line x1="135" y1="56" x2="135" y2="107"/>
+  </g>
+  <rect x="30" y="150" width="200" height="4" fill="#211A10"/>
+  <rect x="45" y="130" width="34" height="20" fill="#A6432D"/>
+  <rect x="100" y="120" width="20" height="30" fill="#4C6444"/>
+  <rect x="140" y="110" width="20" height="40" fill="#4C6444"/>
+  <text x="45" y="145" font-family="Newsreader, serif" font-size="11" fill="#F0E7D2">%</text>
+</svg>`;
+
+document.getElementById('solar-diagram').innerHTML = `
+<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of an off-grid solar power system">
+  <rect x="30" y="40" width="150" height="90" fill="#1E3A52" stroke="#211A10" stroke-width="2" transform="skewY(-6)"/>
+  <g stroke="#F0E7D2" stroke-width="1.2" opacity="0.55">
+    <line x1="60" y1="20" x2="60" y2="120"/><line x1="90" y1="14" x2="90" y2="115"/>
+    <line x1="120" y1="8" x2="120" y2="108"/><line x1="150" y1="2" x2="150" y2="102"/>
+  </g>
+  <text x="30" y="150" font-family="Work Sans, sans-serif" font-size="13" fill="#211A10">Solar panel</text>
+
+  <line x1="180" y1="90" x2="270" y2="90" stroke="#211A10" stroke-width="2"/>
+  <rect x="270" y="60" width="70" height="60" rx="3" fill="#A6432D"/>
+  <text x="273" y="93" font-family="Work Sans, sans-serif" font-size="11" fill="#F0E7D2">Charge</text>
+  <text x="273" y="107" font-family="Work Sans, sans-serif" font-size="11" fill="#F0E7D2">controller</text>
+
+  <line x1="340" y1="90" x2="420" y2="90" stroke="#211A10" stroke-width="2"/>
+  <rect x="420" y="55" width="60" height="80" rx="4" fill="#4C6444"/>
+  <rect x="432" y="45" width="8" height="10" fill="#4C6444"/>
+  <rect x="452" y="45" width="8" height="10" fill="#4C6444"/>
+  <text x="425" y="100" font-family="Work Sans, sans-serif" font-size="11" fill="#F0E7D2">Battery</text>
+
+  <line x1="305" y1="120" x2="305" y2="190" stroke="#211A10" stroke-width="2"/>
+  <line x1="305" y1="190" x2="520" y2="190" stroke="#211A10" stroke-width="2"/>
+  <circle cx="540" cy="190" r="20" fill="none" stroke="#D9A441" stroke-width="3"/>
+  <line x1="524" y1="174" x2="556" y2="206" stroke="#D9A441" stroke-width="2.5"/>
+  <line x1="556" y1="174" x2="524" y2="206" stroke="#D9A441" stroke-width="2.5"/>
+  <text x="500" y="225" font-family="Work Sans, sans-serif" font-size="13" fill="#211A10">Load (lights, radio, phone charging)</text>
+
+  <g font-family="Newsreader, serif" font-size="12" fill="#5B5140">
+    <text x="185" y="82">DC current</text>
+    <text x="345" y="82">regulated charge</text>
+  </g>
+</svg>`;
+
+document.getElementById('biogas-diagram').innerHTML = `
+<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a simple household biogas digester">
+  <rect x="40" y="150" width="90" height="70" fill="#5B5140" opacity="0.3"/>
+  <ellipse cx="85" cy="150" rx="45" ry="10" fill="#5B5140" opacity="0.5"/>
+  <text x="45" y="235" font-family="Work Sans, sans-serif" font-size="12" fill="#211A10">Dung + water slurry</text>
+
+  <line x1="130" y1="180" x2="220" y2="180" stroke="#211A10" stroke-width="3"/>
+  <ellipse cx="300" cy="180" rx="90" ry="55" fill="#4C6444" opacity="0.35" stroke="#211A10" stroke-width="2"/>
+  <text x="250" y="185" font-family="Work Sans, sans-serif" font-size="12" fill="#211A10">Sealed digester tank</text>
+  <text x="255" y="200" font-family="Work Sans, sans-serif" font-size="10" fill="#5B5140">(anaerobic — no air)</text>
+
+  <line x1="300" y1="130" x2="300" y2="70" stroke="#211A10" stroke-width="3"/>
+  <path d="M270 70 Q300 40 330 70 L330 100 Q300 120 270 100 Z" fill="#D9A441" opacity="0.75" stroke="#211A10" stroke-width="2"/>
+  <text x="345" y="80" font-family="Work Sans, sans-serif" font-size="12" fill="#211A10">Gas storage</text>
+  <text x="345" y="94" font-family="Work Sans, sans-serif" font-size="12" fill="#211A10">(floating dome)</text>
+
+  <line x1="330" y1="85" x2="500" y2="85" stroke="#211A10" stroke-width="3"/>
+  <line x1="500" y1="85" x2="500" y2="150" stroke="#211A10" stroke-width="3"/>
+  <rect x="470" y="150" width="60" height="14" fill="#A6432D"/>
+  <path d="M480 150 q10 -20 20 0" fill="none" stroke="#D9A441" stroke-width="3"/>
+  <path d="M492 150 q10 -20 20 0" fill="none" stroke="#D9A441" stroke-width="3"/>
+  <text x="450" y="185" font-family="Work Sans, sans-serif" font-size="12" fill="#211A10">Stove burner</text>
+
+  <line x1="390" y1="210" x2="430" y2="230" stroke="#211A10" stroke-width="2"/>
+  <text x="435" y="234" font-family="Work Sans, sans-serif" font-size="11" fill="#5B5140">Overflow slurry &rarr; used as fertiliser</text>
+</svg>`;
+</script>
+
+</body>
+</html>
