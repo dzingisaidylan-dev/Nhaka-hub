@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yourusername.github.io/nhaka-hub/sitemap.xml
+Sitemap: https://dzingisaidylan.github.io/nhaka-hub/sitemap.xml
